@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="data1">
+
+        <item>หัวข้อที่ 1</item>
+        <item>หัวข้อที่ 2</item>
+    </string-array>
+
+
+
+
+</resources>

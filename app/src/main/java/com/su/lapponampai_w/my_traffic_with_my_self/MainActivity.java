@@ -6,10 +6,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity {
 
     private Button buttom_about;
+    private ListView listView;
 
 
     @Override
@@ -24,9 +26,28 @@ public class MainActivity extends AppCompatActivity {
 
         press_open_hotmail();
 
+        bind_list_view();
+
 
 
     }
+
+    private void bind_list_view() {
+
+        final int[] adapints = {R.drawable.traffic_01, R.drawable.traffic_02};
+
+        final String[] adapStringd1 = getResources().getStringArray(R.array.data1);
+
+        final String[] adapStringd2 = {"รายละเอียดที่ 1","รายละเอียดที่ 2"};
+
+
+        My_Adapter myAdapter = new My_Adapter(MainActivity.this, adapints, adapStringd1, adapStringd2);
+        listView.setAdapter(myAdapter);
+
+
+    }
+
+
 
     private void press_open_hotmail() {
 
@@ -45,6 +66,7 @@ public class MainActivity extends AppCompatActivity {
     private void bindwidget() {
 
         buttom_about = (Button) findViewById(R.id.main_bottom);
+        listView = (ListView) findViewById(R.id.main_listview);
 
 
     }
